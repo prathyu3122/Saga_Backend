@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Data
 @Table
 @Entity
-public class Articles {
+public class Article {
     @Id
     private int id;
     private String title;

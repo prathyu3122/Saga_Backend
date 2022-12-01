@@ -1,8 +1,8 @@
 package com.example.SagaBackend.Repository;
 
-import com.example.SagaBackend.Model.Articles;
-import org.hibernate.metamodel.model.convert.spi.JpaAttributeConverter;
+import com.example.SagaBackend.Model.Article;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ArticlesRepository extends JpaAttributeConverter<Long, Articles> {
-    
+public interface ArticlesRepository extends JpaRepository<Article, Long> {
+
 }
