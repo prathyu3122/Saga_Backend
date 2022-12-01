@@ -14,8 +14,14 @@ public class ArticlesController {
 
     @CrossOrigin
     @PostMapping("/addarticle")
-    public void addingNewArticle(@RequestBody Article article) {
-        articlesService.addArticle(article);
+    public String addingNewArticle(@RequestBody Article article) {
+        try {
+            articlesService.addArticle(article);
+            return "{\"message\" : \"Article Added Successfully!\"}";
+        }
+        catch (Exception exception) {
+            return "{\"message\" : \"Article already Exists, Can't be added!\"}";
+        }
     }
 
 }

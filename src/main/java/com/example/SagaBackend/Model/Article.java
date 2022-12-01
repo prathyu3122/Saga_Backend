@@ -13,7 +13,6 @@ public class Article {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String title;
-    private String subtitle;
     private String genre;
     private String description;
     private String author;
