@@ -24,9 +24,4 @@ public class ArticlesService {
         return articlesRepository.findAll();
     }
 
-    // Displaying all genres
-    public List<Genre> viewGenres() {
-        return articlesRepository.findAll();
-    }
-
 }
