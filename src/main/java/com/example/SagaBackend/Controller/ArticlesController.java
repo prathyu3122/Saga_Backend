@@ -32,4 +32,10 @@ public class ArticlesController {
         return articlesService.displayGenreArticles(param_genre);
     }
 
+    //Displaying complete article
+    @CrossOrigin
+    @GetMapping("/article/{param_title}")
+    public List<Article> displayArticle(@PathVariable String param_title) {
+        return articlesService.displayArticle(param_title);
+    }
 }
