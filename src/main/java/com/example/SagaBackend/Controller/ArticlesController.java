@@ -5,6 +5,8 @@ import com.example.SagaBackend.Service.ArticlesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/saga")
 public class ArticlesController {
@@ -14,14 +16,14 @@ public class ArticlesController {
 
     @CrossOrigin
     @PostMapping("/addarticle")
-    public String addingNewArticle(@RequestBody Article article) {
-        try {
+    public void addingNewArticle(@RequestBody Article article) {
             articlesService.addArticle(article);
-            return "{\"message\" : \"Article Added Successfully!\"}";
-        }
-        catch (Exception exception) {
-            return "{\"message\" : \"Article already Exists, Can't be added!\"}";
-        }
+    }
+
+    @CrossOrigin
+    @GetMapping("/all_articles")
+    public List<Article> viewAllArticles() {
+        return articlesService.viewArticles();
     }
 
 }
