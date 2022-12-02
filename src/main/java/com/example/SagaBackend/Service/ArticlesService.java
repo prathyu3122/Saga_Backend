@@ -24,4 +24,9 @@ public class ArticlesService {
         return articlesRepository.findAll();
     }
 
+    //Displaying Articles of that genre
+    public List<Article> displayGenreArticles(String param_genre) {
+        return articlesRepository.findByGenre(param_genre);
+    }
+
 }

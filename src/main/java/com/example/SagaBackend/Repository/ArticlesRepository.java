@@ -8,4 +8,8 @@ import java.util.List;
 
 @Repository
 public interface ArticlesRepository extends JpaRepository<Article, Long> {
+
+    //Find genre to display
+    public List<Article> findByGenre(String param_genre);
+
 }
