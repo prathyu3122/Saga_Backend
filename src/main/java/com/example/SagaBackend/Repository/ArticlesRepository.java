@@ -12,7 +12,7 @@ public interface ArticlesRepository extends JpaRepository<Article, Long> {
     //Find genre to display
     public List<Article> findByGenre(String param_genre);
 
-    //Displaying Complete Article
-//    public List<Article> findByTitle(String param_title);
+    //Find author to display
+    public List<Article> findByAuthor(String param_author);
 
 }

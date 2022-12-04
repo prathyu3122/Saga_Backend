@@ -27,15 +27,14 @@ public class ArticlesController {
     }
 
     @CrossOrigin
-    @GetMapping("/articles/{param_genre}")
+    @GetMapping("/genre_articles/{param_genre}")
     public List<Article> displayArticlesOfGenre(@PathVariable String param_genre) {
         return articlesService.displayGenreArticles(param_genre);
     }
 
-    //Displaying complete article
-//    @CrossOrigin
-//    @GetMapping("/article/{param_title}")
-//    public List<Article> displayArticle(@PathVariable String param_title) {
-//        return articlesService.displayArticle(param_title);
-//    }
+    @CrossOrigin
+    @GetMapping("/author_articles/{param_author}")
+    public List<Article> displayArticlesOfAuthor(@PathVariable String param_author) {
+        return articlesService.displayAuthorArticles(param_author);
+    }
 }

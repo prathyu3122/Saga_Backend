@@ -29,10 +29,9 @@ public class ArticlesService {
         return articlesRepository.findByGenre(param_genre);
     }
 
-    //Displaying complete article
-//    public List<Article> displayArticle(String param_title) {
-//
-//        return articlesRepository.findByTitle(param_title);
-//    }
-
+    //Displaying Articles of that Author
+    public List<Article> displayAuthorArticles(String param_author) {
+        return articlesRepository.findByAuthor(param_author);
+    }
+    
 }
