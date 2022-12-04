@@ -30,8 +30,9 @@ public class ArticlesService {
     }
 
     //Displaying complete article
-    public List<Article> displayArticle(String param_title) {
-        return articlesRepository.findByTitle(param_title);
-    }
+//    public List<Article> displayArticle(String param_title) {
+//
+//        return articlesRepository.findByTitle(param_title);
+//    }
 
 }

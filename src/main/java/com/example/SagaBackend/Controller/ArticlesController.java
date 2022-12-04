@@ -27,15 +27,15 @@ public class ArticlesController {
     }
 
     @CrossOrigin
-    @GetMapping("/article/{param_genre}")
+    @GetMapping("/articles/{param_genre}")
     public List<Article> displayArticlesOfGenre(@PathVariable String param_genre) {
         return articlesService.displayGenreArticles(param_genre);
     }
 
     //Displaying complete article
-    @CrossOrigin
-    @GetMapping("/article/{param_title}")
-    public List<Article> displayArticle(@PathVariable String param_title) {
-        return articlesService.displayArticle(param_title);
-    }
+//    @CrossOrigin
+//    @GetMapping("/article/{param_title}")
+//    public List<Article> displayArticle(@PathVariable String param_title) {
+//        return articlesService.displayArticle(param_title);
+//    }
 }

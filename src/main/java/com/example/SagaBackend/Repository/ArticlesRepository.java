@@ -13,6 +13,6 @@ public interface ArticlesRepository extends JpaRepository<Article, Long> {
     public List<Article> findByGenre(String param_genre);
 
     //Displaying Complete Article
-    public List<Article> findByTitle(String param_title);
+//    public List<Article> findByTitle(String param_title);
 
 }
