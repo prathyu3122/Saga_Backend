@@ -33,5 +33,5 @@ public class ArticlesService {
     public List<Article> displayAuthorArticles(String param_author) {
         return articlesRepository.findByAuthor(param_author);
     }
-    
+
 }
