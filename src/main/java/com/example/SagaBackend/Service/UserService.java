@@ -10,7 +10,7 @@ public class UserService {
     private UserRepository userRepository;
 
     // Adding new users
-    public void addArticle(Users user) {
+    public void addUser(Users user) {
         userRepository.save(user);
     }
 }
