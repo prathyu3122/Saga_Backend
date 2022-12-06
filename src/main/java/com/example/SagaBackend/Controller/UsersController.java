@@ -20,5 +20,20 @@ public class UsersController {
     }
 
 
+    // Verifying User Login
+    @CrossOrigin
+    @PostMapping("/verifyUser")
+    public String verifyingUser(@RequestBody Users loginUser) {
+        String result = userService.verifyUser(loginUser);
+        if(result != null && result != "no user") {
+            return result;
+        }
+        else if(result == null) {
+            return "Incorrect Username/Password!";
+        }
+        else {
+            return "User Not Registered!!!";
+        }
+    }
 
 }
