@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+// This is Author Model connected to Author table in the database
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

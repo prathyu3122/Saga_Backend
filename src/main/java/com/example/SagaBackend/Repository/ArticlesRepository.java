@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+//This is Articles Repository
 @Repository
 public interface ArticlesRepository extends JpaRepository<Article, Long> {
 

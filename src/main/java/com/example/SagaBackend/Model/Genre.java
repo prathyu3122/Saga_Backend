@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+// This is Genre Model connected to Genre table in the database
 @Table
 @Entity
 @AllArgsConstructor

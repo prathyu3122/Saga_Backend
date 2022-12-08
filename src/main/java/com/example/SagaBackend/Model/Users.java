@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+// This is Users Model connected to login users table in the database
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

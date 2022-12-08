@@ -3,6 +3,8 @@ package com.example.SagaBackend.Model;
 import lombok.*;
 import javax.persistence.*;
 
+
+// This is Article Model connected to article table in the database
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
