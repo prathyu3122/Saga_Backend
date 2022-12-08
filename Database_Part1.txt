@@ -1,0 +1,130 @@
+// Creation of database
+
+CREATE DATABASE sagaapp;
+postgres-# ;
+CREATE DATABASE
+
+postgres=# \c sagaapp;
+You are now connected to database "sagaapp" as user "postgres".
+
+//Creation of Articles Table
+
+CREATE TABLE articles(id int primary key, title varchar, subtitle varchar, genre varchar, description varchar, author varchar,imageurl varchar, published_date varchar);
+
+CREATE TABLE
+
+// Displaying all tables from the database
+
+sagaapp=# \dt
+          List of relations
+ Schema |   Name   | Type  |  Owner
+--------+----------+-------+----------
+ public | articles | table | postgres
+(1 row)
+
+
+// Describing Table
+
+sagaapp=# \d articles;
+                       Table "public.articles"
+     Column     |       Type        | Collation | Nullable | Default
+----------------+-------------------+-----------+----------+---------
+ id             | integer           |           | not null |
+ title          | character varying |           |          |
+ subtitle       | character varying |           |          |
+ genre          | character varying |           |          |
+ description    | character varying |           |          |
+ author         | character varying |           |          |
+ imageurl       | character varying |           |          |
+ published_date | character varying |           |          |
+Indexes:
+    "articles_pkey" PRIMARY KEY, btree (id)
+
+
+// Creating Genre Table
+CREATE TABLE genre(id int primary key, gname varchar, gimage varchar);
+CREATE TABLE
+
+\d genre;
+                    Table "public.genre"
+ Column |       Type        | Collation | Nullable | Default
+--------+-------------------+-----------+----------+---------
+ id     | integer           |           | not null |
+ gname  | character varying |           |          |
+ gimage | character varying |           |          |
+Indexes:
+    "genre_pkey" PRIMARY KEY, btree (id)
+
+// Inserting values into genre table
+
+INSERT INTO genre values(1, 'Technology', 'https://miro.medium.com/max/568/1*qQ9wLshn7lVY5pvkq11HIA.png');
+INSERT 0 1
+sagaapp=# INSERT INTO genre values(2, 'Current Affairs', 'https://images.shiksha.com/mediadata/images/articles/1604768999phpoJ63vs.jpeg');
+INSERT 0 1
+sagaapp=# INSERT INTO genre values(3, 'News', 'https://cdn-icons-png.flaticon.com/512/21/21601.png');
+INSERT 0 1
+
+// Displaying values in genre table
+
+SELECT * FROM genre;
+ id |      gname      |                                    gimage
+----+-----------------+-------------------------------------------------------------------------------
+  1 | Technology      | https://miro.medium.com/max/568/1*qQ9wLshn7lVY5pvkq11HIA.png
+  2 | Current Affairs | https://images.shiksha.com/mediadata/images/articles/1604768999phpoJ63vs.jpeg
+  3 | News            | https://cdn-icons-png.flaticon.com/512/21/21601.png
+(3 rows)
+
+
+// Author table is created
+
+CREATE TABLE author(id int primary key, author varchar);
+CREATE TABLE
+
+\d author;
+                    Table "public.author"
+ Column |       Type        | Collation | Nullable | Default
+--------+-------------------+-----------+----------+---------
+ id     | integer           |           | not null |
+ author | character varying |           |          |
+Indexes:
+    "author_pkey" PRIMARY KEY, btree (id)
+
+
+// Users table is created for login and registration
+
+ CREATE TABLE login_users(username varchar primary key, email varchar not null, password varchar not null);
+CREATE TABLE
+sagaapp=# SELECT * FROM login_users;
+ username | email | password
+----------+-------+----------
+(0 rows)
+
+
+\d login_users;
+                  Table "public.login_users"
+  Column  |       Type        | Collation | Nullable | Default
+----------+-------------------+-----------+----------+---------
+ username | character varying |           | not null |
+ email    | character varying |           | not null |
+ password | character varying |           | not null |
+Indexes:
+    "login_users_pkey" PRIMARY KEY, btree (username)
+
+
+// Authors Insertion
+
+INSERT INTO author SELECT id, author FROM article;
+
+SELECT * FROM author;
+ id |             author
+----+---------------------------------
+ 10 | Sputnik International
+ 13 | Graeme Massie
+ 14 | cnbc.com
+ 18 | cnn.com
+ 19 | newsfeedback@fool.com (Leo Sun)
+ 21 | Abigail Ng
+ 50 | Troy Lynch
+ 58 | Investor's Business Daily
+ 59 | Jake Peterson
+(9 rows)
